@@ -1,0 +1,20 @@
+h1{
+    background-color: yellowgreen;
+    color: blue;
+}
+
+
+#form{
+    padding: 50px;
+}
+
+#form th, #form td{
+    padding: 5px;
+}
+
+.table th,.table td{
+    padding: 5px;
+    border: 1px solid blue;
+    color: darkblue;
+    width: 150px;
+}

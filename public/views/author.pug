@@ -1,0 +1,20 @@
+html
+    link(rel="stylesheet",href="../style.css")
+    head
+        title pug document
+    body
+        h1 Author details
+        div.table
+            table
+                thead
+                    th author_id
+                    th name
+                    th City
+                tbody
+                    each x in authors
+                        tr
+                            td= x.author_id
+                            td= x.name
+                            td= x.country
+
+        
