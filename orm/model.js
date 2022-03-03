@@ -21,7 +21,7 @@ var author=sequelize.define('author',{
         type: Sequelize.INTEGER,
         primaryKey:true
     },
-    name:{
+    book_name:{
         type: Sequelize.TEXT,
         allowNull:false
     },
@@ -39,15 +39,18 @@ var author=sequelize.define('author',{
 author.hasMany(book,{foreignKey: 'author_id'});
 book.belongsTo(author,{foreignKey: 'author_id'});
 
+
+
+
 author.sync({drop: false}).then(() => {
     
-    console.log("Author table Synched!!!");
-  });
+  console.log("Author table Synched!!!");
+});
 
 book.sync({ drop: false}).then(() => {
-    
-    console.log("Book table Synched!!!");
-  });
+  
+  console.log("Book table Synched!!!");
+});
 
 
   module.exports={book:book,author:author};
