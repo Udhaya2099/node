@@ -1,5 +1,5 @@
 const route=require("express").Router();
-const temp=require("express").Router();
+
 const model=require("../orm/model")
 
 
