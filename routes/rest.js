@@ -7,6 +7,7 @@ const model=require("../orm/model")
 route.get("/authors",function(request,response){
     model.author.findAll(
         {include:[model.book]}
+        
       ).then(function(data){
           response.json(data)
       }).catch(function(err){

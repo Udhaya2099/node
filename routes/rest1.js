@@ -32,4 +32,52 @@ var book={book_id:request.body.book_id,
     );
 })
 
+temp.delete("/delete1",function(request,response){
+    model.book.destroy(
+        {where:[model.author]}
+        ).then(function(data){
+            response.json(data)
+        }).catch(function(err){
+            console.log(err)
+            response.json([]);
+        })}) 
+
+temp.delete("/delete1/:book_id",function(request,response){
+    model.book.destroy(
+        {
+            where: {
+                book_id: request.params.book_id
+                    }
+        }).then(function(data){
+                    response.json(data)
+                }).catch(function(err){
+                    console.log(err)
+                    response.json([]);
+                })}) 
+
+
+
+temp.put("/update1/:book_id/:name/:category/:price",function(request,response){
+    
+                    model.book.update(
+                        {
+                        book_name: request.params.name,
+                        category: request.params.category,
+                        price: request.params.price}, {
+                        where: {
+                            book_id: request.params.book_id
+                        }
+                    }).then(function(data){
+                    response.json(data)
+                    }).catch(function(err){
+                    console.log(err)
+                    response.json([]);
+                })
+            }) 
+            
+
+
+
+
+
 module.exports = temp
